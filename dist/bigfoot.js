@@ -12,6 +12,7 @@
         anchorParentTagname: 'sup',
         breakpoints: {},
         deleteOnUnhover: false,
+		deleteOnClickOff: true,
         footnoteParentClass: 'footnote',
         footnoteTagname: 'li',
         hoverDelay: 250,
@@ -209,7 +210,9 @@
           clickButton($nearButton);
         } else if ($nearFootnote.length < 1) {
           if ($(".bigfoot-footnote").length > 0) {
-            removePopovers();
+			  if(settings.deleteOnClickOff){
+				removePopovers();
+			  }
           }
         }
       };
